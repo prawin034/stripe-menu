@@ -1,0 +1,19 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  @include respond(TAB) {
+    font-size: 50%;
+  }
+  @include respond(MINI) {
+    font-size: 43%;
+  }
+}
+body {
+  font-family: sans-serif;
+  // background: url('../../images//hero.svg');
+}

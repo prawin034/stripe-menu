@@ -1,0 +1,132 @@
+.Hero {
+  width: 100%;
+  position: relative;
+  // min-height: 90vh;
+  margin-top: 4rem;
+  @include respond(TAB) {
+    margin-top: 2rem;
+  }
+  @include respond(PHONE) {
+    margin-top: 4rem;
+  }
+  background: url('../../images/hero.svg');
+  backface-visibility: hidden;
+
+  background-size: cover;
+  background-position: left;
+  position: fixed;
+  z-index: 1;
+  top: 10%;
+  left: 0;
+  width: 100%;
+  height: 90%;
+
+  border: none;
+  height: 100%;
+  // overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    // height: 105%;
+  }
+
+  &_center {
+    width: 70vw;
+    height: 100%;
+    margin: 10rem auto;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 10rem;
+    padding: 2rem;
+    background-clip: border-box;
+    backface-visibility: hidden;
+
+    @include respond(PHONE) {
+      flex-direction: column;
+      align-items: flex-start;
+      margin: 0 auto;
+    }
+    @include respond(SMALL) {
+      margin: -5rem auto;
+      width: 100vw;
+    }
+  }
+
+  &_images {
+    // width: 50%;
+    @include respond(PHONE) {
+      display: none;
+    }
+    img {
+      width: 30rem;
+      height: 45rem;
+    }
+  }
+
+  &_info {
+    // width: 50rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: start;
+    @include respond(PHONE) {
+      align-items: flex-start;
+    }
+    gap: 4rem;
+    h1 {
+      font-size: 7rem;
+      color: black;
+      font-weight: bold;
+      text-transform: capitalize;
+
+      text-align: left;
+      @include respond(PHONE) {
+        font-size: 4rem;
+      }
+      @include respond(SMALL) {
+        font-size: 5rem;
+      }
+      @include respond(MINI) {
+        font-size: 4rem;
+      }
+    }
+    p {
+      font-size: 2rem;
+      color: #0198ad;
+      font-weight: bold;
+      text-transform: capitalize;
+
+      @include respond(SMALL) {
+        font-size: 3rem;
+      }
+      @include respond(MINI) {
+        font-size: 2rem;
+      }
+    }
+  }
+}
+
+.btn {
+  &,
+  &:link,
+  &:visited {
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: #0198ad;
+    font-weight: 900;
+    background-color: black;
+    padding: 1rem;
+    border-radius: 1.1rem;
+    transition: all cubic-bezier(0.075, 0.82, 0.165, 1) 1s;
+  }
+  &:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+  }
+}

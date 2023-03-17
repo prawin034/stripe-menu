@@ -1,0 +1,108 @@
+.sidebar_wrapper {
+  // padding-top: 5rem;
+  display: none;
+  @include respond(PHONE) {
+    background: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 1%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    display: grid;
+    place-items: center;
+    visibility: hidden;
+    opacity: 0;
+    transform: scale(0.2);
+    transition: all cubic-bezier(0.175, 0.885, 0.32, 1.275) 1s;
+    cursor: pointer;
+  }
+}
+.show {
+  visibility: visible;
+  opacity: 1;
+  transform: scale(1.1);
+}
+.sidebar {
+  background-color: #fff;
+  height: 95vh;
+  width: 90vw;
+  position: relative;
+  padding-top: 4rem;
+
+  &_close {
+    &,
+    &:link,
+    &:visited {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      color: #1098ad;
+      font-size: 4rem;
+      border: none;
+      background: none;
+      transition: all cubic-bezier(0.175, 0.885, 0.32, 1.275) 1s;
+      border: 5px solid black;
+
+      @include respond(PHONE) {
+        font-size: 5rem;
+        top: 3rem;
+      }
+    }
+    &:hover {
+      color: black;
+      cursor: pointer;
+    }
+  }
+
+  &_links {
+    margin-bottom: 2rem;
+    padding: 2rem;
+    &_article {
+      margin-bottom: 2rem;
+    }
+    &_h4 {
+      font-size: 3rem;
+      color: black;
+      margin-bottom: 2rem;
+      text-transform: uppercase;
+      @include respond(PHONE) {
+        font-size: 5rem;
+        margin-bottom: 5rem;
+      }
+    }
+  }
+
+  &_sublinks {
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+
+    @include respond(PHONE) {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+    @include respond(MINI) {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+    }
+    &_a {
+      font-size: 2rem;
+      color: #244d53;
+      text-decoration: none;
+      @include respond(PHONE) {
+        font-size: 3rem;
+        margin-bottom: 4rem;
+      }
+      @include respond(MINI) {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+      }
+    }
+  }
+}
+
+span {
+  margin-right: 1rem;
+}
